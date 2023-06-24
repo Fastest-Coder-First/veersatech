@@ -8,9 +8,9 @@ const jwt = require('jsonwebtoken');
 
 router.post('/signup', async (req, res) => {
     try {
-      const { email, password } = req.body;
+      const { name,email, password } = req.body;
   
-      if (!(email && password)) {
+      if (!(name && email && password)) {
         res.status(400).send("All inputs are required");
       }
   
@@ -25,10 +25,11 @@ router.post('/signup', async (req, res) => {
       const user = await UserModel.create({
         email: email.toLowerCase(),
         password: encryptedPassword,
+        name
       });
   
       const token = jwt.sign(
-        { user_id: user._id, email },
+        { user_id: user._id, email, name },
         process.env.TOKEN_KEY,
         {
           expiresIn: "2h",
