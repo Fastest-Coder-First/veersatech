@@ -1,0 +1,4 @@
+.ant-col{
+  min-width: 30%;
+  display: flex !important;
+}

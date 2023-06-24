@@ -8,14 +8,17 @@ import {
   Navbar,
 } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
+import CreateForm from "../Form/CreateForm";
+import { FormBuilder } from "../../utils/constants";
 
 const NavbarComponent = () => {
   const { currentUser, loggedIn, setLoggedIn } = useAuth();
-  console.log(currentUser);
+  console.log(FormBuilder["AddTransaction"]);
 
   return (
     <Navbar bg="dark" expand="lg" data-bs-theme="dark">
       <Container fluid>
+        <CreateForm recordType="AddTransaction" recordFields={FormBuilder["AddTransaction"]} />
         <Navbar.Brand href="#">Finance Tracker</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
