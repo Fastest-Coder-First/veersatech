@@ -2,7 +2,21 @@
 
 Welcome to the Personal Finance Tracker user guide! This guide will walk you through the various features and functionalities of the application, helping you manage your income, expenses, categories, and accounts effectively.
 
-## Table of Contents
+## Features
+Following are the key features of the Personal Finance Tracker application:
+- Easy and intutive user interface for add and managing expenses and income transactions
+- Define categories for transactions as per your needs - for example, you can create categories like "Food", "Travel", "Salary", etc.
+- Create accounts to track your balance and transactions - for example, you can create accounts like "Cash", "Credit Card", "Bank Account", etc.
+- Generate reports to get insights into your spending patterns and income sources
+- Manage your profile and settings
+- Secure login and registration
+- Responsive design for mobile and desktop devices
+- Multi-Tenant support - you can create multiple families and family memmbers can manage their own customized transactions, categories, and accounts etc.
+
+
+## Sections
+
+Personal Finance Tracker is divided into the following sections:
 
 1. [Dashboard](#dashboard)
 2. [Transactions](#transactions)
@@ -62,7 +76,16 @@ The settings feature allows you to manage your account settings and preferences.
 
 Congratulations! You are now familiar with the various features of the Personal Finance Tracker application. Start managing your income, expenses, categories, and accounts efficiently to take control of your finances!
 
-If you have any further questions or need assistance, please reach out to our support team at [support@example.com](mailto:support@example.com).
+## Following features are planned for future releases
+- Offline support
+- PWA support
+- Dark mode
+- Multi-language support
+- Multi-currency support
+
+
+If you have any further questions or need assistance, please reach out to our development team.
+
 
 Enjoy using the Personal Finance Tracker!
 
