@@ -10,6 +10,7 @@ const LoginModal = ({ show, handleClose, handleShow }) => {
   const loginMutation = useMutation(["login"], loginUser);
   const signupMutation = useMutation(["signup"], signUpUser);
 
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoginForm, setIsLoginForm] = useState(true);
@@ -22,7 +23,11 @@ const LoginModal = ({ show, handleClose, handleShow }) => {
   const handleSignup = async () => {
     // use signUpUser function from apis.js
     try {
-      const res = await signupMutation.mutateAsync({ email, password });
+      const res = await signupMutation.mutateAsync({
+        username,
+        email,
+        password,
+      });
       console.log(res);
 
       if (res?.status === 201) {
@@ -68,6 +73,19 @@ const LoginModal = ({ show, handleClose, handleShow }) => {
       </Modal.Header>
       <Modal.Body>
         <Form>
+          {!isLoginForm && (
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>Name</Form.Label>
+              <Form.Control
+                type="text"
+                required
+                placeholder="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                autoFocus
+              />
+            </Form.Group>
+          )}
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Email address</Form.Label>
             <Form.Control
@@ -76,9 +94,8 @@ const LoginModal = ({ show, handleClose, handleShow }) => {
               placeholder="name@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              autoFocus
               isValid={isValidEmail(email)}
-              isInvalid={!isValidEmail(email)}
+              isInvalid={email.length > 0 && !isValidEmail(email)}
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
