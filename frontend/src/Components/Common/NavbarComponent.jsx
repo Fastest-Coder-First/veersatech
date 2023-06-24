@@ -15,6 +15,10 @@ const NavbarComponent = () => {
   const { currentUser, loggedIn, setLoggedIn } = useAuth();
   console.log(FormBuilder["AddTransaction"]);
 
+  const logout = () => {
+    localStorage.clear();
+    setLoggedIn(false);
+  };
   return (
     <Navbar bg="dark" expand="lg" data-bs-theme="dark">
       <Container fluid>
@@ -38,6 +42,7 @@ const NavbarComponent = () => {
           {/* username and icon */}
           <Nav>
             <Nav.Link>Hi, {currentUser && currentUser.name}</Nav.Link>
+            <Button onClick={() => logout()}>Logout</Button>
           </Nav>
         </Navbar.Collapse>
       </Container>

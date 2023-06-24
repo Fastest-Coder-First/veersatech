@@ -4,20 +4,13 @@ The Personal Finance Tracker is a web-based application built with JavaScript, H
 
 The application is designed to be simple, intuitive, and user-friendly. It provides a clean, modern, and responsive user interface that is easy to navigate and understand. It also offers a range of features to help users manage their finances effectively.
 
-#Screenshots
+# Screenshots
 
-More detailed information about the application extensive [Features](./userguide.md#features), [Screenshots](./screenshots.md) and intutive usage can be found in the [User Guide](./userguide.md) file.
+More detailed information like [Screenshots](./screenshots.md), about the application extensive [Features](./userguide.md#features), and intutive usage can be found in the [User Guide](./userguide.md) and [Screenshots](./screenshots.md) file.
 
-#Development Details
+# Development Details
 
-The projecthas been developed as a part of [Fastest Coder Hackathon](https://www.fastestcoderfirst.com/) project with extensive [usage of Github CoPilot](#github-copilot-usage). The project is developed from scratch by the team members and no code was copied from any other source. 
-
-| Name | Github Handle | Role | Image |
-| --- | --- | --- | --- |
-| Vipul Taneja | @vipulTaneja | Team Lead | ![Vipul](./media/Vipul.png) |
-| Gourav  | @dayalubana | Full Stack Developer | ![Gourav](./media/Gourav.png) |
-| Daya Singh | @champgourav007 | Full Stack Developer | ![Daya](./media/Daya.png) |
-| Chaitanya | @Chaitanya31612 | Full Stack Developer | ![Chaitanya](./media/Chaitanya.png) |
+The project has been developed as a part of [Fastest Coder Hackathon](https://www.fastestcoderfirst.com/) project with extensive [usage of Github CoPilot](#github-copilot-usage). 
 
 ## GitHub Copilot Usage
 
@@ -38,13 +31,27 @@ It's important to note that while Copilot provided significant assistance, we re
 Overall, GitHub Copilot proved to be a valuable asset, helping us streamline our development process, improve productivity, and produce high-quality code efficiently.
 
 
-## Technical Details
+## Architecure and Technical Details
 
-The project is developed using the following technologies and frameworks:
+The project is developed using the following MERN technologies and frameworks:
 
 - Frontend: JavaScript, HTML, CSS
 - Backend: Node.js with Express
 - Database: mongoDB
+
+![Architecture Diagram](./media/Architecture.png)
+
+The application follows a client-server architecture. The frontend is built using JavaScript, HTML, and CSS. The backend is built using Node.js with Express. The database is built using mongoDB.
+
+## Development Team
+The project is developed from scratch by the team members and no code was copied from any other source. 
+
+| Name | Github Handle | Role | Image |
+| --- | --- | --- | --- |
+| Vipul Taneja | @vipulTaneja | Team Lead | ![Vipul](./media/Vipul.png) |
+| Gourav  | @dayalubana | Full Stack Developer | ![Gourav](./media/Gourav.png) |
+| Daya Singh | @champgourav007 | Full Stack Developer | ![Daya](./media/Daya.png) |
+| Chaitanya | @Chaitanya31612 | Full Stack Developer | ![Chaitanya](./media/Chaitanya.png) |
 
 ## Data Model
 
