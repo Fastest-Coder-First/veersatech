@@ -29,6 +29,13 @@ const Category = () => {
       <br />
       <br />
       <div className="container">
+      <div className="p-5 finances-searchfilter">
+          {/* give code for search bar and filter button */}
+          <input value={search} onChange={(e)=>onSearch(e.target.value)} type="text" placeholder="Search..." />
+          <Button className="filter-btn" variant="primary">
+            Filter
+          </Button>
+        </div>
         <TableComponent tableData={data} name="Category" btnType="Add Category" createNewItemType="AddCategory"/>
       </div>
     </div>
