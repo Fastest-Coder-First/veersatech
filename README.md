@@ -8,6 +8,9 @@ The application is designed to be simple, intuitive, and user-friendly. It provi
 
 More detailed information like [Screenshots](./screenshots.md), a [Demo Video](./media/hackathon_video.webm)  about the application extensive [Features](./userguide.md#features), and intutive usage can be found in the [User Guide](./userguide.md) and [Screenshots](./screenshots.md) file.
 
+<video src=./media/hackathon_video.webm controls="controls" style="max-width: 730px;">
+</video>
+
 # Development Details
 
 The project has been developed as a part of [Fastest Coder Hackathon](https://www.fastestcoderfirst.com/) project with extensive [usage of Github CoPilot](#github-copilot-usage). 
@@ -48,10 +51,10 @@ The project is developed from scratch by the team members and no code was copied
 
 | Name | Github Handle | Role | Image |
 | --- | --- | --- | --- |
-| Vipul Taneja | @vipulTaneja | Team Lead | ![Vipul](./media/Vipul.png) |
-| Gourav  | @dayalubana | Full Stack Developer | ![Gourav](./media/Gourav.png) |
-| Daya Singh | @champgourav007 | Full Stack Developer | ![Daya](./media/Daya.png) |
-| Chaitanya | @Chaitanya31612 | Full Stack Developer | ![Chaitanya](./media/Chaitanya.png) |
+| [Vipul Taneja](https://www.linkedin.com/in/vipultaneja) | @vipulTaneja | Team Lead | ![Vipul](./media/Vipul.png) |
+| [Gourav Kumar Singh](https://www.linkedin.com/in/gourav-kumar-singh-246b4621b/)  | @champgourav007 | Full Stack Developer | ![Gourav](./media/Gourav.png) |
+| [Daya Singh](https://www.linkedin.com/in/daya-singh10/) | @dayalubana | Full Stack Developer | ![Daya](./media/Daya.png) |
+| [Chaitanya Gupta](https://www.linkedin.com/in/guptachaitanya/) | @Chaitanya31612 | Full Stack Developer | ![Chaitanya](./media/Chaitanya.png) |
 
 ## Data Model
 
