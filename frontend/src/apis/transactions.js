@@ -53,9 +53,9 @@ export const getTransactionById = async (id) => {
 };
 
 // create a function to create a transaction
-export const createTransaction = async (transaction) => {
+export const createTransaction = async ({ amount, description }) => {
   try {
-    const response = await axios.post(`${baseURL}/transaction`, transaction);
+    const response = await axios.post(`${baseURL}/transaction/add`);
     Swal.fire({
       icon: "success",
       text: "Transaction created successfully!",
@@ -69,7 +69,7 @@ export const createTransaction = async (transaction) => {
       ) => {
         toast.addEventListener("mouseenter", Swal.stopTimer);
         toast.addEventListener("mouseleave", Swal.resumeTimer);
-      }
+      },
     });
     return response;
   } catch (err) {
@@ -87,14 +87,13 @@ export const createTransaction = async (transaction) => {
       ) => {
         toast.addEventListener("mouseenter", Swal.stopTimer);
         toast.addEventListener("mouseleave", Swal.resumeTimer);
-      }
+      },
     });
     throw Error(err.response.data || "Create transaction failed!");
   }
 };
 // create a function to delete a transaction
-export const removeTransactionById = async (_id
-) => {  
+export const removeTransactionById = async (_id) => {
   try {
     const response = await axios.delete(`${baseURL}/transaction/${_id}`);
     Swal.fire({
@@ -110,7 +109,7 @@ export const removeTransactionById = async (_id
       ) => {
         toast.addEventListener("mouseenter", Swal.stopTimer);
         toast.addEventListener("mouseleave", Swal.resumeTimer);
-      }
+      },
     });
     return response;
   } catch (err) {
@@ -128,11 +127,11 @@ export const removeTransactionById = async (_id
       ) => {
         toast.addEventListener("mouseenter", Swal.stopTimer);
         toast.addEventListener("mouseleave", Swal.resumeTimer);
-      }
+      },
     });
     throw Error(err.response.data || "Delete transaction failed!");
   }
-}
+};
 // create a function to update a transaction
 export const updateTransactionById = async (_id, transaction) => {
   try {
@@ -153,7 +152,7 @@ export const updateTransactionById = async (_id, transaction) => {
       ) => {
         toast.addEventListener("mouseenter", Swal.stopTimer);
         toast.addEventListener("mouseleave", Swal.resumeTimer);
-      }
+      },
     });
     return response;
   } catch (err) {
@@ -171,11 +170,11 @@ export const updateTransactionById = async (_id, transaction) => {
       ) => {
         toast.addEventListener("mouseenter", Swal.stopTimer);
         toast.addEventListener("mouseleave", Swal.resumeTimer);
-      }
+      },
     });
     throw Error(err.response.data || "Update transaction failed!");
   }
-}
+};
 // create a function to get all transactions by user id
 export const getTransactionsByUserId = async (userId) => {
   try {
@@ -196,17 +195,17 @@ export const getTransactionsByUserId = async (userId) => {
       ) => {
         toast.addEventListener("mouseenter", Swal.stopTimer);
         toast.addEventListener("mouseleave", Swal.resumeTimer);
-      }
+      },
     });
-    throw Error(
-      err.response.data || "Get transactions by user id failed!"
-    );
+    throw Error(err.response.data || "Get transactions by user id failed!");
   }
-}
+};
 // create a function to get all transactions by family id
 export const getTransactionsByFamilyId = async (familyId) => {
   try {
-    const response = await axios.get(`${baseURL}/transaction/family/${familyId}`);
+    const response = await axios.get(
+      `${baseURL}/transaction/family/${familyId}`
+    );
     return response;
   } catch (err) {
     console.log("getTransactionsByFamilyId err", err);
@@ -223,17 +222,17 @@ export const getTransactionsByFamilyId = async (familyId) => {
       ) => {
         toast.addEventListener("mouseenter", Swal.stopTimer);
         toast.addEventListener("mouseleave", Swal.resumeTimer);
-      }
+      },
     });
-    throw Error(
-      err.response.data || "Get transactions by family id failed!"
-    );
+    throw Error(err.response.data || "Get transactions by family id failed!");
   }
-}
+};
 // create a function to get all transactions by account id
 export const getTransactionsByAccountId = async (accountId) => {
   try {
-    const response = await axios.get(`${baseURL}/transaction/account/${accountId}`);
+    const response = await axios.get(
+      `${baseURL}/transaction/account/${accountId}`
+    );
     return response;
   } catch (err) {
     console.log("getTransactionsByAccountId err", err);
@@ -250,17 +249,17 @@ export const getTransactionsByAccountId = async (accountId) => {
       ) => {
         toast.addEventListener("mouseenter", Swal.stopTimer);
         toast.addEventListener("mouseleave", Swal.resumeTimer);
-      }
+      },
     });
-    throw Error(
-      err.response.data || "Get transactions by account id failed!"
-    );
+    throw Error(err.response.data || "Get transactions by account id failed!");
   }
-}
+};
 // create a function to get all transactions by category id
 export const getTransactionsByCategoryId = async (categoryId) => {
   try {
-    const response = await axios.get(`${baseURL}/transaction/category/${categoryId}`);
+    const response = await axios.get(
+      `${baseURL}/transaction/category/${categoryId}`
+    );
     return response;
   } catch (err) {
     console.log("getTransactionsByCategoryId err", err);
@@ -277,23 +276,25 @@ export const getTransactionsByCategoryId = async (categoryId) => {
       ) => {
         toast.addEventListener("mouseenter", Swal.stopTimer);
         toast.addEventListener("mouseleave", Swal.resumeTimer);
-      }
+      },
     });
-    throw Error(
-      err.response.data || "Get transactions by category id failed!"
-    );
+    throw Error(err.response.data || "Get transactions by category id failed!");
   }
-}
+};
 // create a function to get all transactions by user id and family id
 export const getTransactionsByUserIdAndFamilyId = async (userId, familyId) => {
   try {
-    const response = await axios.get(`${baseURL}/transaction/user/${userId}/family/${familyId}`);
+    const response = await axios.get(
+      `${baseURL}/transaction/user/${userId}/family/${familyId}`
+    );
     return response;
   } catch (err) {
     console.log("getTransactionsByUserIdAndFamilyId err", err);
     Swal.fire({
       icon: "error",
-      text: err.response.data || "Get transactions by user id and family id failed!",
+      text:
+        err.response.data ||
+        "Get transactions by user id and family id failed!",
       toast: true,
       position: "top",
       showConfirmButton: false,
@@ -304,88 +305,120 @@ export const getTransactionsByUserIdAndFamilyId = async (userId, familyId) => {
       err.response.data || "Get transactions by user id and family id failed!"
     );
   }
-}
+};
 // create a function to get all transactions by user id and account id
-export const getTransactionsByUserIdAndAccountId = async (userId, accountId) => {
+export const getTransactionsByUserIdAndAccountId = async (
+  userId,
+  accountId
+) => {
   try {
-    const response = await axios.get(`${baseURL}/transaction/user/${userId}/account/${accountId}`);
+    const response = await axios.get(
+      `${baseURL}/transaction/user/${userId}/account/${accountId}`
+    );
     return response;
   } catch (err) {
     console.log("getTransactionsByUserIdAndAccountId err", err);
     Swal.fire({
       icon: "error",
-      text: err.response.data || "Get transactions by user id and account id failed!",
+      text:
+        err.response.data ||
+        "Get transactions by user id and account id failed!",
       toast: true,
       position: "top",
       showConfirmButton: false,
       timer: 3000,
-      timerProgressBar: true
+      timerProgressBar: true,
     });
     throw Error(
       err.response.data || "Get transactions by user id and account id failed!"
     );
   }
-}
+};
 // create a function to get all transactions by user id and category id
-export const getTransactionsByUserIdAndCategoryId = async (userId, categoryId) => {
+export const getTransactionsByUserIdAndCategoryId = async (
+  userId,
+  categoryId
+) => {
   try {
-    const response = await axios.get(`${baseURL}/transaction/user/${userId}/category/${categoryId}`);
+    const response = await axios.get(
+      `${baseURL}/transaction/user/${userId}/category/${categoryId}`
+    );
     return response;
   } catch (err) {
     console.log("getTransactionsByUserIdAndCategoryId err", err);
     Swal.fire({
       icon: "error",
-      text: err.response.data || "Get transactions by user id and category id failed!",
+      text:
+        err.response.data ||
+        "Get transactions by user id and category id failed!",
       toast: true,
       position: "top",
       showConfirmButton: false,
       timer: 3000,
-      timerProgressBar: true
+      timerProgressBar: true,
     });
     throw Error(
       err.response.data || "Get transactions by user id and category id failed!"
     );
   }
-}
+};
 // create a function to get all transactions by user id, family id and account id
-export const getTransactionsByUserIdAndFamilyIdAndAccountId = async (userId, familyId, accountId) => {
+export const getTransactionsByUserIdAndFamilyIdAndAccountId = async (
+  userId,
+  familyId,
+  accountId
+) => {
   try {
-    const response = await axios.get(`${baseURL}/transaction/user/${userId}/family/${familyId}/account/${accountId}`);
+    const response = await axios.get(
+      `${baseURL}/transaction/user/${userId}/family/${familyId}/account/${accountId}`
+    );
     return response;
   } catch (err) {
     console.log("getTransactionsByUserIdAndFamilyIdAndAccountId err", err);
     Swal.fire({
       icon: "error",
-      text: err.response.data || "Get transactions by user id, family id and account id failed!",
+      text:
+        err.response.data ||
+        "Get transactions by user id, family id and account id failed!",
       toast: true,
       position: "top",
       showConfirmButton: false,
       timer: 3000,
-      timerProgressBar: true
+      timerProgressBar: true,
     });
     throw Error(
-      err.response.data || "Get transactions by user id, family id and account id failed!"
+      err.response.data ||
+        "Get transactions by user id, family id and account id failed!"
     );
   }
-}
+};
 // create a function to get all transactions by user id, family id and category id
-export const getTransactionsByUserIdAndFamilyIdAndCategoryId = async (userId, familyId, categoryId) => {
+export const getTransactionsByUserIdAndFamilyIdAndCategoryId = async (
+  userId,
+  familyId,
+  categoryId
+) => {
   try {
-    const response = await axios.get(`${baseURL}/transaction/user/${userId}/family/${familyId}/category/${categoryId}`);
+    const response = await axios.get(
+      `${baseURL}/transaction/user/${userId}/family/${familyId}/category/${categoryId}`
+    );
     return response;
   } catch (err) {
     console.log("getTransactionsByUserIdAndFamilyIdAndCategoryId err", err);
     Swal.fire({
       icon: "error",
-      text: err.response.data || "Get transactions by user id, family id and category id failed!",
+      text:
+        err.response.data ||
+        "Get transactions by user id, family id and category id failed!",
       toast: true,
       position: "top",
       showConfirmButton: false,
       timer: 3000,
-      timerProgressBar: true
+      timerProgressBar: true,
     });
     throw Error(
-      err.response.data || "Get transactions by user id, family id and category id failed!"
+      err.response.data ||
+        "Get transactions by user id, family id and category id failed!"
     );
   }
-}
+};

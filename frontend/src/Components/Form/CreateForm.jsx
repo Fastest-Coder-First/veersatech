@@ -1,13 +1,12 @@
-
 import React, { useState } from "react";
 import { Button, Modal, Form, Input, Select, Radio, message } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
-import { createTransaction }  from "../../apis/transactions";
-import './CreateForm.css'
+import { createTransaction } from "../../apis/transactions";
+import "./CreateForm.css";
 
 const { Option } = Select;
 
-const CreateForm = ({ recordType, recordFields, reload }) => {
+const CreateForm = ({ recordType, recordFields, reload, handleSubmit }) => {
   // create a state variable to control the visibility of the popup
   const [visible, setVisible] = useState(false);
 
@@ -18,31 +17,31 @@ const CreateForm = ({ recordType, recordFields, reload }) => {
   const [inputValues, setInputValues] = useState({});
 
   // handle the submit button click event
-  const handleSubmit = async () => {
-    // set the loading status to true
-    setConfirmLoading(true);
+  // const handleSubmit = async () => {
+  //   // set the loading status to true
+  //   setConfirmLoading(true);
 
-    // create a new record in the database
-    const response = await createTransaction(recordType, inputValues);
+  //   // create a new record in the database
+  //   const response = await createTransaction(recordType, inputValues);
 
-    // if the response is successful
-    if (response.status === 200) {
-      // show a success message
-      message.success("Create Successfully");
+  //   // if the response is successful
+  //   if (response.status === 200) {
+  //     // show a success message
+  //     message.success("Create Successfully");
 
-      // reload the page
-      // reload();
-    } else {
-      // show an error message
-      message.error(response.data);
-    }
+  //     // reload the page
+  //     // reload();
+  //   } else {
+  //     // show an error message
+  //     message.error(response.data);
+  //   }
 
-    // set the loading status to false
-    setConfirmLoading(false);
+  //   // set the loading status to false
+  //   setConfirmLoading(false);
 
-    // close the popup
-    setVisible(false);
-  };
+  //   // close the popup
+  //   setVisible(false);
+  // };
 
   // handle the cancel button click event
   const handleCancel = () => {
@@ -63,12 +62,13 @@ const CreateForm = ({ recordType, recordFields, reload }) => {
       {/* open or not */}
       {!visible ? null : (
         <Modal
-        title="Create"
+          title="Create"
           visible={visible}
           onOk={() => handleSubmit()}
           confirm
           onCancel={() => handleCancel()}
           confirmLoading={confirmLoading}
+          okText="Create"
         >
           <Form>
             {recordFields.map((field) => {
@@ -84,9 +84,11 @@ const CreateForm = ({ recordType, recordFields, reload }) => {
                       placeholder={field.placeholder}
                       onChange={(event) => handleChange(event, field.field)}
                     >
-                      {/* {field.options.map((option) => {
-                        return <Option value={option}>{option}</Option>;
-                      })} */}
+                      {field.options?.map((option) => {
+                        return (
+                          <Option value={option.value}>{option.label}</Option>
+                        );
+                      })}
                     </Select>
                   ) : field.type === "radio" ? (
                     <Radio.Group
@@ -114,11 +116,10 @@ const CreateForm = ({ recordType, recordFields, reload }) => {
                       onChange={(event) => handleChange(event, field.field)}
                       type="date"
                     />
-                  ): null}
+                  ) : null}
                 </Form.Item>
               );
-            }
-            )}
+            })}
           </Form>
         </Modal>
       )}

@@ -57,6 +57,7 @@ const TableComponent = (props) => {
         <CreateForm
           recordType="AddTransaction"
           recordFields={FormBuilder["AddTransaction"]}
+          handleSubmit={props.handleSubmit}
         />
       </div>
 
