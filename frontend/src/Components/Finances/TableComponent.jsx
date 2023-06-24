@@ -1,64 +1,59 @@
 import React from "react";
 import { Button, Container, Table } from "react-bootstrap";
-import { FormBuilder } from "../../utils/constants";
-import CreateForm from "../Form/CreateForm.jsx";
+import { useState } from 'react';
+import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
+import {addCategory}  from "../../apis/category.js";
 
 const TableComponent = (props) => {
-  const data = [
+  const [show, setShow] = useState(false);
+  const [data, setData] = useState([
     {
-      id: 1,
-      type: "Expense",
       name: "Electric Bill",
-      date: "2023-06-15",
-      amount: 100,
+      description: "Electric Bill desc",
     },
-    { id: 2, type: "Income", name: "Salary", date: "2023-06-20", amount: 2000 },
     {
-      id: 3,
-      type: "Expense",
       name: "Groceries",
-      date: "2023-06-10",
-      amount: 50,
+      description: "Groceries desc",
     },
-    {
-      id: 4,
-      type: "Expense",
-      name: "Internet Bill",
-      date: "2023-06-25",
-      amount: 80,
-    },
-    {
-      id: 5,
-      type: "Income",
-      name: "Freelance Work",
-      date: "2023-06-18",
-      amount: 500,
-    },
-    { id: 6, type: "Expense", name: "Dinner", date: "2023-06-12", amount: 30 },
-  ];
+  ]);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
+
 
   const renderTableRows = () => {
     return data.map((item) => (
       <tr key={item.id}>
-        <td>{item.type}</td>
         <td>{item.name}</td>
-        <td>{item.date}</td>
-        <td>{item.amount}</td>
+        <td>{item.description}</td>
       </tr>
     ));
   };
+
+  const submitCategory = () => {
+    console.log(name,description,'rrrrrrrrrrrrrrrr')
+    const data =  {name,parentId:"99",familyId:"99",description};
+    setData((c)=>{
+      return [...c,data]
+    })
+    addCategory(data).then(res=>{
+      console.log(res,'rrrrrrrrrrrr');
+      setName('');
+      setDescription('');
+    })
+    handleClose()
+  }
 
   return (
     <div>
       <div className="d-flex justify-content-between align-items-center">
         <h1>{props.name}</h1>
-
-        {/* <Button variant="primary">Add Transaction</Button> */}
-        <CreateForm
-          recordType="AddTransaction"
-          recordFields={FormBuilder["AddTransaction"]}
-          handleSubmit={props.handleSubmit}
-        />
+        <Button variant="primary" onClick={handleShow}>
+        {props.btnType}
+      </Button>
       </div>
 
       <br />
@@ -66,15 +61,31 @@ const TableComponent = (props) => {
         <Table striped bordered hover>
           <thead>
             <tr>
-              <th>Type</th>
               <th>Name</th>
-              <th>Date</th>
-              <th>Amount</th>
+              <th>Description</th>
             </tr>
           </thead>
           <tbody>{renderTableRows()}</tbody>
         </Table>
       </Container>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Body>
+        <Form>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Label>Name</Form.Label>
+            <Form.Control value={name} onChange={(e)=>setName(e.target.value)} type="text" />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+            <Form.Label>Description</Form.Label>
+            <Form.Control value={description} onChange={(e)=>setDescription(e.target.value)} as="textarea" rows={3} />
+          </Form.Group>
+        </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={submitCategory} variant="primary">Submit</Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };

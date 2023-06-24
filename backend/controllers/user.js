@@ -13,7 +13,7 @@ router.get("/getUsers", async (req, res) => {
 
 router.get("/getCurrentUser", async (req, res) => {
   if (req.headers && req.headers.authorization) {
-    var authorization = req.headers.authorization.split(" ")[1],
+    var authorization = req.headers.authorization,
       decoded;
     try {
       decoded = jwt.verify(authorization, process.env.TOKEN_KEY);

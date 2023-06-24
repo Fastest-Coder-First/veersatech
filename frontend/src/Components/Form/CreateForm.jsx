@@ -71,18 +71,18 @@ const CreateForm = ({ recordType, recordFields, reload, handleSubmit }) => {
           okText="Create"
         >
           <Form>
-            {recordFields.map((field) => {
+            {recordFields?.map((field) => {
               return (
                 <Form.Item label={field?.label} sx={{}}>
                   {field?.type === "input" ? (
                     <Input
                       placeholder={field?.placeholder}
-                      onChange={(event) => handleChange(event, field?.field)}
+                      onChange={(event) => handleChange(event, field?.name)}
                     />
                   ) : field?.type === "select" ? (
                     <Select
                       placeholder={field?.placeholder}
-                      onChange={(event) => handleChange(event, field?.field)}
+                      onChange={(event) => handleChange(event, field?.name)}
                     >
                       {/* {field?.options.map((option) => {
                         return <Option value={option}>{option}</Option>;
@@ -90,7 +90,7 @@ const CreateForm = ({ recordType, recordFields, reload, handleSubmit }) => {
                     </Select>
                   ) : field?.type === "radio" ? (
                     <Radio.Group
-                      onChange={(event) => handleChange(event, field?.field)}
+                      onChange={(event) => handleChange(event, field?.name)}
                     >
                       {field?.options?.map((option) => {
                         return <Radio value={option}>{option}</Radio>;
@@ -99,19 +99,19 @@ const CreateForm = ({ recordType, recordFields, reload, handleSubmit }) => {
                   ) : field?.type === "text" ? (
                     <Input
                       placeholder={field?.placeholder}
-                      onChange={(event) => handleChange(event, field?.field)}
+                      onChange={(event) => handleChange(event, field?.name)}
                       type="text"
                     />
                   ) : field?.type === "number" ? (
                     <Input
                       placeholder={field?.placeholder}
-                      onChange={(event) => handleChange(event, field?.field)}
+                      onChange={(event) => handleChange(event, field?.name)}
                       type="number"
                     />
                   ) : field?.type === "date" ? (
                     <Input
                       placeholder={field?.placeholder}
-                      onChange={(event) => handleChange(event, field?.field)}
+                      onChange={(event) => handleChange(event, field?.name)}
                       type="date"
                     />
                   ) : null}
