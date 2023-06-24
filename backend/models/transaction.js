@@ -1,76 +1,75 @@
-// create user schema in backend\modals\account.js: where schema contains id, name, balance, currency, parentId, familyId, userId, createdby, updatedby, createddate, updateddate
+// create mongo user schema in backend\modals\transaction.js: where schema id, description, amount, categoryId, accountId, familyId, userId, createdBy, updatedBy, createdDate, updatedDate
+
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-const accountSchema = new Schema({
-    name:{
+const Schema = mongoose.Schema,
+ObjectId = Schema.ObjectId;
+const transactionSchema = new Schema({
+    description:{
         type:String,
         required:true,
         trim:true,
         min:3,
         max:20
     },
-    balance:{
+    amount:{
         type:Number,
         required:true,
         trim:true,
         min:0,
         max:1000000
     },
-    currency:{
-        type:String,
+    categoryId:{
+        type:ObjectId,
         required:true,
         trim:true,
         min:3,
         max:20
     },
-    parentId:{
-        type:String,
+    accountId:{
+        type:ObjectId,
         required:true,
         trim:true,
         min:3,
         max:20
     },
     familyId:{
-        type:String,
+        type:ObjectId,
         required:true,
         trim:true,
         min:3,
         max:20
     },
     userId:{
+        type:ObjectId,
+        required:true,
+        trim:true,
+        min:3,
+        max:20
+    },
+    createdBy:{
         type:String,
         required:true,
         trim:true,
         min:3,
         max:20
     },
-    createdby:{
+    updatedBy:{
         type:String,
         required:true,
         trim:true,
         min:3,
         max:20
     },
-    updatedby:{
-        type:String,
-        required:true,
-        trim:true,
-        min:3,
-        max:20
-    },
-    createdat:{
+    createdDate:{
         type:Date,
         required:true,
-        trim:true,
-        min:3,
-        max:20
+        trim:true
     },
-    updatedat:{
+    updatedDate:{
         type:Date,
         required:true,
-        trim:true,
-        min:3,
-        max:20
+        trim:true
     },
 })
-module.exports = mongoose.model('Account',accountSchema);
+
+module.exports = mongoose.model('Transaction',transactionSchema);

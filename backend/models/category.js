@@ -1,7 +1,8 @@
 // create mongo user schema in backend\modals\category.js: where schema id, name, parentId, familyId, userId, createdBy, updatedBy, createdDate, updatedDate
 
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const Schema = mongoose.Schema,
+ObjectId = Schema.ObjectId;
 const categorySchema = new Schema({
     name:{
         type:String,
@@ -11,21 +12,21 @@ const categorySchema = new Schema({
         max:20
     },
     parentId:{
-        type:String,
+        type:ObjectId,
         required:true,
         trim:true,
         min:3,
         max:20
     },
     familyId:{
-        type:String,
+        type:ObjectId,
         required:true,
         trim:true,
         min:3,
         max:20
     },
     userId:{
-        type:String,
+        type:ObjectId,
         required:true,
         trim:true,
         min:3,

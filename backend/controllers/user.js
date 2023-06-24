@@ -2,16 +2,37 @@
 
 const express = require('express');
 const router = express.Router();
-const UserModel = require('../modals/user');
+const UserModel = require('../models/user');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+route.get('/getUsers', async (req, res) => {
+  const users = await UserModel.find();
+  res.status(201).json(users);
+})
+
+route.get('/getCurrentUser', async (req, res) => {
+  if (req.headers && req.headers.authorization) {
+    var authorization = req.headers.authorization.split(' ')[1],
+      decoded;
+    try {
+      decoded = jwt.verify(authorization, process.env.TOKEN_KEY);
+    } catch (e) {
+      return res.status(401).send('unauthorized');
+    }
+    var email = decoded.email;
+    // Fetch the user by id 
+    const user = await UserModel.findOne({ email: email })
+    return res.status(201).json({email:user.email});
+  }
+  return res.send(500);
+})
+
 router.post('/signup', async (req, res) => {
     try {
-      const { email, password } = req.body;
-      // console.log(email, password);
+      const { name,email, password } = req.body;
   
-      if (!(email && password)) {
+      if (!(name && email && password)) {
         res.status(400).send("All inputs are required");
       }
   
@@ -26,10 +47,11 @@ router.post('/signup', async (req, res) => {
       const user = await UserModel.create({
         email: email.toLowerCase(),
         password: encryptedPassword,
+        name
       });
   
       const token = jwt.sign(
-        { user_id: user._id, email },
+        { user_id: user._id, email, name },
         process.env.TOKEN_KEY,
         {
           expiresIn: "2h",
@@ -47,13 +69,10 @@ router.post('/signup', async (req, res) => {
       const { email, password } = req.body;
   
       if (!(email && password)) {
-        console.log('55555555');
         res.status(400).send("All input is required");
       }
       const user = await UserModel.findOne({ email });
-      console.log(user);
       if (user && (await bcrypt.compare(password, user.password))) {
-        // console.log('11111111111111');
         const token = jwt.sign(
           { user_id: user._id, email },
           process.env.TOKEN_KEY,
@@ -64,11 +83,9 @@ router.post('/signup', async (req, res) => {
   
         res.status(200).json(token);
       } else {
-        // console.log('333333333');
         res.status(400).send("Invalid Credentials");
       }
     } catch (err) {
-      // console.log('2222222222');
       console.log(err);
     }
   })
