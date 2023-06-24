@@ -17,7 +17,15 @@ const DashboardPage = () => {
           </Col>
         </Row>
         <Row>
-          <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-evenly",
+              backgroundColor: "#0000001a",
+              height: "25rem",
+              borderRadius: "5rem",
+            }}
+          >
             <div style={{ width: "50%" }}>
               <BarChart />
             </div>

@@ -10,8 +10,11 @@ import {
 import { useAuth } from "../../contexts/AuthContext";
 import CreateForm from "../Form/CreateForm";
 import { FormBuilder } from "../../utils/constants";
+import { useParams } from "react-router-dom";
 
 const NavbarComponent = () => {
+  const params = useParams();
+  console.log("params", params, window.location.pathname);
   const { currentUser, loggedIn, setLoggedIn } = useAuth();
   console.log(FormBuilder["AddTransaction"]);
 
@@ -27,10 +30,38 @@ const NavbarComponent = () => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="/">Dashboard</Nav.Link>
-            <Nav.Link href="/finances">Transactions</Nav.Link>
-            <Nav.Link href="#">Accounts</Nav.Link>
-            <Nav.Link href="/categories">Categories</Nav.Link>
+            <Nav.Link
+              href="/"
+              style={{
+                color: window.location.pathname === "/dashboard" && "white",
+              }}
+            >
+              Dashboard
+            </Nav.Link>
+            <Nav.Link
+              href="/finances"
+              style={{
+                color: window.location.pathname === "/finances" && "white",
+              }}
+            >
+              Transactions
+            </Nav.Link>
+            <Nav.Link
+              href="/accounts"
+              style={{
+                color: window.location.pathname === "/accounts" && "white",
+              }}
+            >
+              Accounts
+            </Nav.Link>
+            <Nav.Link
+              href="/categories"
+              style={{
+                color: window.location.pathname === "/categories" && "white",
+              }}
+            >
+              Categories
+            </Nav.Link>
             <Nav.Link href="#">Reports</Nav.Link>
             <Nav.Link href="#">Settings</Nav.Link>
           </Nav>

@@ -1,11 +1,18 @@
 import { Route, Routes, useNavigate } from "react-router-dom";
-import { DashboardPage, FinancesPage, HomePage, NotFoundPage, CategoryPage } from "./pages";
+import {
+  DashboardPage,
+  FinancesPage,
+  HomePage,
+  NotFoundPage,
+  CategoryPage,
+} from "./pages";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
 import { loadUser, setAuthToken } from "./apis";
 
 import { useAuth } from "./contexts/AuthContext";
 import PrivateRoutes from "./routes/PrivateRoutes";
+import AccountsPage from "./pages/AccountsPage";
 
 function App() {
   const navigate = useNavigate();
@@ -49,6 +56,7 @@ function App() {
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/finances" element={<FinancesPage />} />
         <Route path="/categories" element={<CategoryPage />} />
+        <Route path="/accounts" element={<AccountsPage />} />
       </Route>
 
       <Route path="*" element={<NotFoundPage />} />
