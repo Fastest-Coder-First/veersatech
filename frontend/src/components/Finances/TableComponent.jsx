@@ -1,9 +1,9 @@
 import React from "react";
 import { Button, Container, Table } from "react-bootstrap";
 import { FormBuilder } from "../../utils/constants";
-import CreateForm from "../Form/CreateForm";
+import CreateForm from "../Form/CreateForm.jsx";
 
-const FinancesTable = (props) => {
+const TableComponent = (props) => {
   const data = [
     {
       id: 1,
@@ -78,4 +78,4 @@ const FinancesTable = (props) => {
   );
 };
 
-export default FinancesTable;
+export default TableComponent;

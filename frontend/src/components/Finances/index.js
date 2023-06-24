@@ -1,2 +1,2 @@
 export { default as SearchFilters } from "./SearchFilters";
-export { default as FinancesTable } from "./FinancesTable";
+export { default as TableComponent } from "./TableComponent";
