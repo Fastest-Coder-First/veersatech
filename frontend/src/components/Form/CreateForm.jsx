@@ -73,45 +73,45 @@ const CreateForm = ({ recordType, recordFields, reload }) => {
           <Form>
             {recordFields.map((field) => {
               return (
-                <Form.Item label={field.label} sx={{}}>
-                  {field.type === "input" ? (
+                <Form.Item label={field?.label} sx={{}}>
+                  {field?.type === "input" ? (
                     <Input
-                      placeholder={field.placeholder}
-                      onChange={(event) => handleChange(event, field.field)}
+                      placeholder={field?.placeholder}
+                      onChange={(event) => handleChange(event, field?.field)}
                     />
-                  ) : field.type === "select" ? (
+                  ) : field?.type === "select" ? (
                     <Select
-                      placeholder={field.placeholder}
-                      onChange={(event) => handleChange(event, field.field)}
+                      placeholder={field?.placeholder}
+                      onChange={(event) => handleChange(event, field?.field)}
                     >
-                      {/* {field.options.map((option) => {
+                      {/* {field?.options.map((option) => {
                         return <Option value={option}>{option}</Option>;
                       })} */}
                     </Select>
-                  ) : field.type === "radio" ? (
+                  ) : field?.type === "radio" ? (
                     <Radio.Group
-                      onChange={(event) => handleChange(event, field.field)}
+                      onChange={(event) => handleChange(event, field?.field)}
                     >
-                      {field.options.map((option) => {
+                      {field?.options?.map((option) => {
                         return <Radio value={option}>{option}</Radio>;
                       })}
                     </Radio.Group>
-                  ) : field.type === "text" ? (
+                  ) : field?.type === "text" ? (
                     <Input
-                      placeholder={field.placeholder}
-                      onChange={(event) => handleChange(event, field.field)}
+                      placeholder={field?.placeholder}
+                      onChange={(event) => handleChange(event, field?.field)}
                       type="text"
                     />
-                  ) : field.type === "number" ? (
+                  ) : field?.type === "number" ? (
                     <Input
-                      placeholder={field.placeholder}
-                      onChange={(event) => handleChange(event, field.field)}
+                      placeholder={field?.placeholder}
+                      onChange={(event) => handleChange(event, field?.field)}
                       type="number"
                     />
-                  ) : field.type === "date" ? (
+                  ) : field?.type === "date" ? (
                     <Input
-                      placeholder={field.placeholder}
-                      onChange={(event) => handleChange(event, field.field)}
+                      placeholder={field?.placeholder}
+                      onChange={(event) => handleChange(event, field?.field)}
                       type="date"
                     />
                   ): null}
