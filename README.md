@@ -2,9 +2,15 @@
 
 The Personal Finance Tracker is a web-based application built with JavaScript, HTML, and CSS and node.js. It allows users to track their income and expenses, manage categories, and monitor their financial transactions.
 
-More detailed information about the application [Features](./userguide.md#features) and usage can be found in the [User Guide](./userguide.md) file.
+More detailed information about the application extensive [Features](./userguide.md#features) and intutive usage can be found in the [User Guide](./userguide.md) file.
 
-It has been developed by Four of Veersa Technologies Developers using Github CoPilot tool for enhanced productivity. All code was developed as a part of [Fastest Coder Hackathon](https://www.fastestcoderfirst.com/) project and no code was copied from any other source.
+#Development Details
+
+It has been developed by following Four of Veersa Technologies Developers using Github CoPilot tool for enhanced productivity. All code was developed as a part of [Fastest Coder Hackathon](https://www.fastestcoderfirst.com/) project and no code was copied from any other source.
+1. @vipulTaneja - Team Lead
+2. @dayalubana - Full Stack Developer
+3. @champgourav007 - Full Stack Developer
+4. @Chaitanya31612 - Full Stack Developer
 
 ## GitHub Copilot Usage
 
