@@ -1,5 +1,7 @@
 import React from "react";
 import { Button, Container, Table } from "react-bootstrap";
+import { FormBuilder } from "../../utils/constants";
+import CreateForm from "../Form/CreateForm";
 
 const FinancesTable = (props) => {
   const data = [
@@ -51,7 +53,11 @@ const FinancesTable = (props) => {
       <div className="d-flex justify-content-between align-items-center">
         <h1>{props.name}</h1>
 
-        <Button variant="primary">{props.btnType}</Button>
+        {/* <Button variant="primary">Add Transaction</Button> */}
+        <CreateForm
+          recordType="AddTransaction"
+          recordFields={FormBuilder["AddTransaction"]}
+        />
       </div>
 
       <br />
