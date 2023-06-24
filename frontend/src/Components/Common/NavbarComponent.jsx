@@ -28,9 +28,11 @@ const NavbarComponent = () => {
             navbarScroll
           >
             <Nav.Link href="/">Dashboard</Nav.Link>
-            <Nav.Link href="/finances">Finances</Nav.Link>
-            <Nav.Link href="#">Calendar</Nav.Link>
+            <Nav.Link href="/finances">Transactions</Nav.Link>
+            <Nav.Link href="#">Accounts</Nav.Link>
             <Nav.Link href="/categories">Categories</Nav.Link>
+            <Nav.Link href="#">Reports</Nav.Link>
+            <Nav.Link href="#">Settings</Nav.Link>
           </Nav>
 
           {/* username and icon */}

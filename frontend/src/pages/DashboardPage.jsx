@@ -12,7 +12,7 @@ const DashboardPage = () => {
       <Container>
         <Row className="mt-4">
           <Col>
-            <h1>Welcome to the Dashboard</h1>
+            <h1>Finance Tracker Dashboard</h1>
             <p>Here you can view and manage your financial data.</p>
           </Col>
         </Row>
