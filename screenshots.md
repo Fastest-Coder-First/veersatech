@@ -20,15 +20,19 @@ Dashboard page that provides a brief overview of the user's financial status. It
 # Transactions Page
 Transactions Page that allows users to view, add, edit, and delete transactions. It also allows users to filter transactions by date, category, and account.
 ![Transactions Page](./media/transactions.jpg)
+![Create Transaction](./media/create-transaction.jpg)
+
 
 # Categories Page
 Categoroes Page that allows users to view, add, edit, and delete categories.
 ![Categories Page](./media/categories.jpg)
+![Create Category](./media/add-category.jpg)
 
 
 # Accounts Page
 Accounts Page that allows users to view, add, edit, and delete accounts.
 ![Accounts Page](./media/accounts.jpg)
+![Create Account](./media/add-account.jpg)
 
 # Reports Page
 Reports Page that allows users to view reports of their income and expenses over time.
