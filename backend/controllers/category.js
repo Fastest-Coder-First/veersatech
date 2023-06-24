@@ -7,7 +7,7 @@ const auth = require("../middleware/auth");
 const jwt = require("jsonwebtoken");
 
 router.post("/add", auth, (req, res) => {
-    const { name, parentId, familyId } = req.body;
+    const { name, parentId, familyId, description } = req.body;
     var token = req.header("Authorization");
   const decoded = jwt.verify(token, process.env.TOKEN_KEY);
     const category = new Category({
@@ -30,7 +30,7 @@ router.get('/get', (req, res) => {
     var token = req.header("Authorization");
     const decoded = jwt.verify(token, process.env.TOKEN_KEY);
     let userId = decoded.userId;
-    Category.findById(userId).then((category) => {
+    Category.findById({userId : id}).then((category) => {
         res.status(200).json({ success: true, category })
     }).catch((err) => {
         res.status(400).json({ success: false, err })
@@ -46,7 +46,7 @@ router.delete('/delete/:id', (req, res) => {
 })
 
 router.put('/update/:id',auth,(req,res)=>{
-    const {name, parentId, familyId} = req.body;
+    const {name, parentId, familyId, description} = req.body;
     var token = req.header("Authorization");
     const decoded = jwt.verify(token, process.env.TOKEN_KEY);
     const date = new Date();

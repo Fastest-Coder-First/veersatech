@@ -21,7 +21,7 @@ const transactionSchema = new Schema({
     trim: true,
   },
   familyId: {
-    type: ObjectId,
+    type: String,
     trim: true,
   },
   userId: {
