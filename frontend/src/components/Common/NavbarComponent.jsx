@@ -7,8 +7,12 @@ import {
   NavDropdown,
   Navbar,
 } from "react-bootstrap";
+import { useAuth } from "../../contexts/AuthContext";
 
 const NavbarComponent = () => {
+  const { currentUser, loggedIn, setLoggedIn } = useAuth();
+  console.log(currentUser);
+
   return (
     <Navbar bg="dark" expand="lg" data-bs-theme="dark">
       <Container fluid>
@@ -20,31 +24,16 @@ const NavbarComponent = () => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Finances</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link>
+            <Nav.Link href="/">Dashboard</Nav.Link>
+            <Nav.Link href="/finances">Finances</Nav.Link>
+            <Nav.Link href="#">Calendar</Nav.Link>
+            <Nav.Link href="#">Categories</Nav.Link>
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
+
+          {/* username and icon */}
+          <Nav>
+            <Nav.Link>Hi, {currentUser && currentUser.name}</Nav.Link>
+          </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
