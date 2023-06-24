@@ -18,7 +18,7 @@ const NavbarComponent = () => {
   return (
     <Navbar bg="dark" expand="lg" data-bs-theme="dark">
       <Container fluid>
-        <CreateForm recordType="AddTransaction" recordFields={FormBuilder["AddTransaction"]} />
+        {/* <CreateForm recordType="AddTransaction" recordFields={FormBuilder["AddTransaction"]} /> */}
         <Navbar.Brand href="#">Finance Tracker</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
