@@ -6,20 +6,17 @@ const User = require('../models/user');
 const auth = require('../middleware/auth');
 
 router.post('/add',auth,(req,res)=>{
-    const {amount,description,categoryId, accountId, familyId, userId, createdBy, updatedBy, createdDate, updatedDate} = req.body;
+    const {amount,description,categoryId, accountId, familyId, transactionType, userId, createdBy, updatedBy, createdDate, updatedDate} = req.body;
     const transaction = new Transaction({
-        amount,
-        description,
-        userId,
-        familyId,
-        categoryId,
-        accountId,
-        credit,
-        debit,
-        createdBy,
-        updatedBy,
-        createdDate,
-        updatedDate
+        amount : amount,
+        description: description,
+        userId: userId,
+        familyId: familyId,
+        categoryId: categoryId,
+        accountId: accountId,
+        transactionType: transactionType,
+        createdBy: req.user.email,
+        createdDate: new Date()
     })
     transaction.save().then((transaction)=>{
         res.status(200).json({success:true,transaction})
@@ -37,20 +34,17 @@ router.get('/get/:id',auth,(req,res)=>{
 })
 
 router.put('/update/:id',auth,(req,res)=>{
-    const {amount,description,categoryId, accountId, familyId, userId, createdBy, updatedBy, createdDate, updatedDate} = req.body;
+    const {amount,description,categoryId, accountId, familyId, userId, transactionType} = req.body;
     Transaction.findByIdAndUpdate(req.params.id,{
-        amount,
-        description,
-        userId,
-        familyId,
-        categoryId,
-        accountId,
-        credit,
-        debit,
-        createdBy,
-        updatedBy,
-        createdDate,
-        updatedDate
+        amount : amount,
+        description: description,
+        userId: userId,
+        familyId: familyId,
+        categoryId: categoryId,
+        accountId: accountId,
+        transactionType: transactionType,
+        updatedBy: req.user.email,
+        updatedDate: new Date()
     }).then((transaction)=>{
         res.status(200).json({success:true,transaction})
     }).catch((err)=>{

@@ -5,18 +5,18 @@ const Account = require('../models/account');
 const auth = require('../middleware/auth');
 
 router.post('/add', auth, (req, res) => {
-    const { name, balance, currency, parentId, userId, familyId, createdBy, updatedBy, createdDate, updatedDate } = req.body;
+    const { name, balance, currency, parentId, userId, familyId } = req.body;
+    const date = new Date();
+    const decoded = jwt.verify(token,process.env.JWT_SECRET);
     const account = new Account({
-        name,
-        userId,
-        familyId,
-        createdBy,
-        updatedBy,
-        createdDate,
-        updatedDate,
-        parentId,
-        balance,
-        currency
+        name : name,
+        userId: userId,
+        familyId: familyId,
+        createdBy: decoded.email,
+        createdDate: date,
+        parentId: parentId,
+        balance: balance,
+        currency: currency
     })
     account.save().then((account) => {
         res.status(200).json({ success: true, account })
@@ -42,18 +42,17 @@ router.delete('/delete/:id', auth, (req, res) => {
 })
 
 router.put('/update/:id',auth,(req,res)=>{
-    const {name, balance, currency, parentId, userId, familyId, createdBy, updatedBy, createdDate, updatedDate} = req.body;
+    const {name, balance, currency, parentId, userId, familyId} = req.body;
+    const decoded = jwt.verify(token,process.env.JWT_SECRET);
     Account.findByIdAndUpdate(req.params.id,{
-        name,
-        userId,
-        familyId,
-        createdBy,
-        updatedBy,
-        createdDate,
-        updatedDate,
-        parentId,
-        balance,
-        currency
+        name: name,
+        userId: userId,
+        familyId: familyId,
+        updatedBy: req.user.email,
+        updatedDate: new Date(),
+        parentId: parentId,
+        balance: balance,
+        currency: currency
     }).then((account)=>{
         res.status(200).json({success:true,account})
     }).catch((err)=>{

@@ -35,5 +35,33 @@ export const FormBuilder = {
       "placeholder": "Enter Date",
       "required": true
     }
-  ]
+  ],
+  // create a new key for categories
+  "AddCategory" : [
+    {
+      "type": "text",
+      "name": "name",
+      "label": "Name",
+      "placeholder": "Enter Name",
+      "required": true
+    },
+    {
+      "type": "text",
+      "name": "description",
+      "label": "Description",
+      "placeholder": "Enter Description",
+      "required": true
+    },
+    {
+      "type": "radio",
+      "name": "isParent",
+      "label": "Is Parent",
+      "required": true
+    },
+    {
+      "type": "select",
+      "name": "categoryId",
+      "label": "Category",
+      "required": true
+    }],
 }
