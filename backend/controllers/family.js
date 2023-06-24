@@ -53,5 +53,6 @@ router.get('/getUserById/:id', (req, res) => {
     })
 })
 
+module.exports = router;
 
 

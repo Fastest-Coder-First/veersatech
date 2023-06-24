@@ -1,4 +1,4 @@
-// create mongo user schema in backend\modals\transaction.js: where schema id, description, amount, categoryId, accountId, familyId, userId, createdBy, updatedBy, createdDate, updatedDate
+// create mongo user schema in backend\modals\transaction.js: where schema id, description, amount, categoryId, accountId, familyId, userId, createdBy, updatedBy, createdDate, updatedDate, credit, debit
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema,
@@ -45,6 +45,14 @@ const transactionSchema = new Schema({
         trim:true,
         min:3,
         max:20
+    },
+    credit:{
+        type:Boolean,
+        required:true,
+    },
+    debit:{ 
+        type:Boolean,
+        required:true,
     },
     createdBy:{
         type:String,

@@ -16,7 +16,7 @@ const familySchema = new Schema({
         required:true,
         trim:true,
         min:3,
-        max
+        max:50
     },
     
 })

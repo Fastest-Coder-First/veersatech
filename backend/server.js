@@ -7,6 +7,8 @@ const db = require('./database/database')
 const app = express();
 const user = require('./controllers/user')
 const transaction = require('./controllers/transaction')
+const family = require('./controllers/family')
+const chart = require('./controllers/chart')
 const account = require('./controllers/account')
 const category = require('./controllers/category')
 
@@ -28,7 +30,8 @@ app.use('/user',user);
 app.use('/transaction',transaction);
 app.use('/account',account);
 app.use('/category',category);
-
+app.use('/family',family);
+app.use('/chart',chart);
 app.get('',(req,res)=>{
 	res.send('working fine')
 })
