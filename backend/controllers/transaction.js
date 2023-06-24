@@ -16,7 +16,7 @@ router.post("/add", auth, (req, res) => {
     transactionType,
   } = req.body;
   var token = req.header("Authorization");
-  const decoded = jwt.verify(token, process.env.JWT_SECRET);
+  const decoded = jwt.verify(token, process.env.TOKEN_KEY);
   const transaction = new Transaction({
     amount: amount,
     description: description,
@@ -58,7 +58,7 @@ router.put("/update/:id", auth, (req, res) => {
     transactionType,
   } = req.body;
   var token = req.header("Authorization");
-  const decoded = jwt.verify(token, process.env.JWT_SECRET);
+  const decoded = jwt.verify(token, process.env.TOKEN_KEY);
   Transaction.findByIdAndUpdate(req.params.id, {
     amount: amount,
     description: description,
