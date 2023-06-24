@@ -74,7 +74,7 @@ Make sure you have [Node.js](https://nodejs.org) and [npm](https://www.npmjs.com
 
 #### Steps
 
-1. Clone the repository to your local machine.
+1. Ensure cloning process above is completed without any error. .
 
 2. Navigate to the project's root directory in your command-line interface (CLI) or terminal.
 
@@ -88,8 +88,22 @@ Make sure you have [Node.js](https://nodejs.org) and [npm](https://www.npmjs.com
    ```
 
 ### 3. Start the API server:
+- create a .env file in root of `backend` folder with following entries
+```shell
+TOKEN_KEY=<secret_key>
+MONGO_URI="<enter your mongo db URI here>"
+```
+- Switch to folder `backend` and run the following command to run API server
+```shell
+npm start
+```
 
 ### 4. Start the UI server:
+- Switch to folder `frontend` and run the following command to run the UI server
+```shell
+npm start
+```
+
 
 ### 5. Access the application in your browser at [http://localhost:3000](http://localhost:3000).
 

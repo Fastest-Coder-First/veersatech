@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "debug": "node --nolazy server.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
