@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { useMutation } from "@tanstack/react-query";
+import { loginUser, signUpUser } from "../../apis";
 
 const LoginModal = ({ show, handleClose, handleShow }) => {
   const navigate = useNavigate();
+
+  const loginMutation = useMutation(["login"], loginUser);
+  const signupMutation = useMutation(["signup"], signUpUser);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,8 +22,16 @@ const LoginModal = ({ show, handleClose, handleShow }) => {
   const handleSignup = async () => {
     // use signUpUser function from apis.js
     try {
-      console.log("signup");
-      navigate("/dashboard");
+      const res = await signupMutation.mutateAsync({ email, password });
+      console.log(res);
+
+      if (res?.status === 201) {
+        console.log("signup successful");
+        localStorage.setItem("token", res.data);
+        handleClose();
+        // redirect to /dashboard
+        navigate("/dashboard");
+      }
     } catch (error) {
       console.log(error);
     }
@@ -27,8 +40,16 @@ const LoginModal = ({ show, handleClose, handleShow }) => {
   const handleLogin = async () => {
     // use loginUser function from apis.js
     try {
-      console.log("login");
-      navigate("/dashboard");
+      const res = await loginMutation.mutateAsync({ email, password });
+      console.log(res);
+
+      if (res?.status === 200) {
+        console.log("login successful");
+        localStorage.setItem("token", res.data);
+        handleClose();
+        // redirect to /dashboard
+        navigate("/dashboard");
+      }
     } catch (error) {
       console.log(error);
     }
