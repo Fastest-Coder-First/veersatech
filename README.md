@@ -4,7 +4,7 @@ The Personal Finance Tracker is a web-based application built with JavaScript, H
 
 The application is designed to be simple, intuitive, and user-friendly. It provides a clean, modern, and responsive user interface that is easy to navigate and understand. It also offers a range of features to help users manage their finances effectively.
 
-#Screenshots
+# Screenshots
 
 More detailed information like [Screenshots](./screenshots.md), about the application extensive [Features](./userguide.md#features), and intutive usage can be found in the [User Guide](./userguide.md) and [Screenshots](./screenshots.md) file.
 
