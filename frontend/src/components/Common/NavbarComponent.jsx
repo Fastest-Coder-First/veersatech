@@ -30,7 +30,7 @@ const NavbarComponent = () => {
             <Nav.Link href="/">Dashboard</Nav.Link>
             <Nav.Link href="/finances">Finances</Nav.Link>
             <Nav.Link href="#">Calendar</Nav.Link>
-            <Nav.Link href="#">Categories</Nav.Link>
+            <Nav.Link href="/categories">Categories</Nav.Link>
           </Nav>
 
           {/* username and icon */}

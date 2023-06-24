@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Container, Table } from "react-bootstrap";
 
-const FinancesTable = () => {
+const FinancesTable = (props) => {
   const data = [
     {
       id: 1,
@@ -49,9 +49,9 @@ const FinancesTable = () => {
   return (
     <div>
       <div className="d-flex justify-content-between align-items-center">
-        <h1>Finances</h1>
+        <h1>{props.name}</h1>
 
-        <Button variant="primary">Add Transaction</Button>
+        <Button variant="primary">{props.btnType}</Button>
       </div>
 
       <br />

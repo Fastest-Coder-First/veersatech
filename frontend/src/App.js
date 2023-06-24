@@ -1,5 +1,5 @@
 import { Route, Routes, useNavigate } from "react-router-dom";
-import { DashboardPage, FinancesPage, HomePage, NotFoundPage } from "./pages";
+import { DashboardPage, FinancesPage, HomePage, NotFoundPage, CategoryPage } from "./pages";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
 import { loadUser, setAuthToken } from "./apis";
@@ -48,6 +48,7 @@ function App() {
       >
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/finances" element={<FinancesPage />} />
+        <Route path="/categories" element={<CategoryPage />} />
       </Route>
 
       <Route path="*" element={<NotFoundPage />} />
