@@ -9,7 +9,6 @@ const jwt = require('jsonwebtoken');
 router.post('/signup', async (req, res) => {
     try {
       const { email, password } = req.body;
-      // console.log(email, password);
   
       if (!(email && password)) {
         res.status(400).send("All inputs are required");
@@ -47,13 +46,10 @@ router.post('/signup', async (req, res) => {
       const { email, password } = req.body;
   
       if (!(email && password)) {
-        console.log('55555555');
         res.status(400).send("All input is required");
       }
       const user = await UserModel.findOne({ email });
-      console.log(user);
       if (user && (await bcrypt.compare(password, user.password))) {
-        // console.log('11111111111111');
         const token = jwt.sign(
           { user_id: user._id, email },
           process.env.TOKEN_KEY,
@@ -64,11 +60,9 @@ router.post('/signup', async (req, res) => {
   
         res.status(200).json(token);
       } else {
-        // console.log('333333333');
         res.status(400).send("Invalid Credentials");
       }
     } catch (err) {
-      // console.log('2222222222');
       console.log(err);
     }
   })
