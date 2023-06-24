@@ -2,7 +2,6 @@
 
 const express = require('express');
 const router = express.Router();
-const Chart = require('../models/chart');
 const Category = require('../models/category');
 const Transaction = require('../models/transaction');
 const auth = require('../middleware/auth');
@@ -38,3 +37,5 @@ router.get('/get/:id', auth, (req, res) => {
     })
     res.status(200).json({ success: true, charts })
 })
+
+module.exports = router;
