@@ -57,6 +57,8 @@ The project is developed from scratch by the team members and no code was copied
 
 The application consists of the following entities:
 
+![data model](./media/data-model.png)
+
 1. Transaction:
    - ID: String or Number
    - Description: String
