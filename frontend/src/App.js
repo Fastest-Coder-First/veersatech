@@ -22,7 +22,6 @@ function App() {
           console.log("user: ", user);
           setCurrentUser(user);
           setLoggedIn(true);
-          navigate("/dashboard");
         } catch (error) {
           console.log("error: ", error);
           Swal.fire({
@@ -44,9 +43,7 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route
         element={
-          <PrivateRoutes
-            loggedIn={loggedIn || localStorage.getItem("authToken")}
-          />
+          <PrivateRoutes loggedIn={loggedIn || localStorage.getItem("token")} />
         }
       >
         <Route path="/dashboard" element={<DashboardPage />} />
