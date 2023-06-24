@@ -6,7 +6,7 @@ The application is designed to be simple, intuitive, and user-friendly. It provi
 
 # Screenshots
 
-More detailed information like [Screenshots](./screenshots.md), about the application extensive [Features](./userguide.md#features), and intutive usage can be found in the [User Guide](./userguide.md) and [Screenshots](./screenshots.md) file.
+More detailed information like [Screenshots](./screenshots.md), a [Demo Video](./media/hackathon_video.webm)  about the application extensive [Features](./userguide.md#features), and intutive usage can be found in the [User Guide](./userguide.md) and [Screenshots](./screenshots.md) file.
 
 # Development Details
 
