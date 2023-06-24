@@ -6,12 +6,12 @@ const UserModel = require('../models/user');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-route.get('/getUsers', async (req, res) => {
+router.get('/getUsers', async (req, res) => {
   const users = await UserModel.find();
   res.status(201).json(users);
 })
 
-route.get('/getCurrentUser', async (req, res) => {
+router.get('/getCurrentUser', async (req, res) => {
   if (req.headers && req.headers.authorization) {
     var authorization = req.headers.authorization.split(' ')[1],
       decoded;
