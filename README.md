@@ -58,18 +58,36 @@ The application consists of the following entities:
 
 ## Installation and Usage
 
-1. Clone the repository:
+### 1. Clone the repository:
+   - Open your command-line interface (CLI) or terminal.
+   - Navigate to the directory where you want to clone the repository using the cd command.
+   - Once you are in the desired directory, use the git clone command followed by the repository URL.
+   - Wait for the cloning process to complete.
+   - You have successfully cloned the directory!
 
-2. Install dependencies:
+### 2. Install dependencies:
 
-3. Start the server:
+#### Prerequisites
+Make sure you have [Node.js](https://nodejs.org) and [npm](https://www.npmjs.com) (Node Package Manager) installed on your machine.
 
-4. Access the application in your browser at [http://localhost:3000](http://localhost:3000).
+#### Steps
 
-For detailed instructions on how to use the application and its features, please refer to the [User Guide](./userguide.md) file.
+1. Clone the repository to your local machine.
+
+2. Navigate to the project's root directory in your command-line interface (CLI) or terminal.
+
+3. Run the following command to install the project dependencies:
+   ```shell
+   npm install
+
+### 3. Start the API server:
+
+### 4. Start the UI server:
+
+### 5. Access the application in your browser at [http://localhost:3000](http://localhost:3000).
+
 
 ## User Guide
-
 For detailed information on how to use the Personal Finance Tracker and its various features, please refer to the [User Guide](./userguide.md) file.
 
 
