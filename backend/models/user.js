@@ -1,4 +1,4 @@
-// create user schema in backend\database\models\user.js:
+// create user schema in backend\modals\user.js:
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const userSchema = new Schema({

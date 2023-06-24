@@ -44,6 +44,7 @@ export const loginUser = async ({ email, password }) => {
 export const signUpUser = async ({ username, email, password }) => {
   try {
     const response = await axios.post(`${baseURL}/user/signup`, {
+      name: username,
       email,
       password,
     });

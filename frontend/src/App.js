@@ -1,5 +1,5 @@
 import { Route, Routes, useNavigate } from "react-router-dom";
-import { DashboardPage, HomePage, NotFoundPage } from "./pages";
+import { DashboardPage, FinancesPage, HomePage, NotFoundPage } from "./pages";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
 import { loadUser, setAuthToken } from "./apis";
@@ -18,7 +18,8 @@ function App() {
 
       const getUser = async () => {
         try {
-          const { user } = await loadUser();
+          const user = await loadUser();
+          console.log("user: ", user);
           setCurrentUser(user);
           setLoggedIn(true);
           navigate("/dashboard");
@@ -49,6 +50,7 @@ function App() {
         }
       >
         <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/finances" element={<FinancesPage />} />
       </Route>
 
       <Route path="*" element={<NotFoundPage />} />
