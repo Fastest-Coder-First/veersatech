@@ -6,6 +6,28 @@ const UserModel = require('../models/user');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+route.get('/getUsers', async (req, res) => {
+  const users = await UserModel.find();
+  res.status(201).json(users);
+})
+
+route.get('/getCurrentUser', async (req, res) => {
+  if (req.headers && req.headers.authorization) {
+    var authorization = req.headers.authorization.split(' ')[1],
+      decoded;
+    try {
+      decoded = jwt.verify(authorization, process.env.TOKEN_KEY);
+    } catch (e) {
+      return res.status(401).send('unauthorized');
+    }
+    var email = decoded.email;
+    // Fetch the user by id 
+    const user = await UserModel.findOne({ email: email })
+    return res.status(201).json({email:user.email});
+  }
+  return res.send(500);
+})
+
 router.post('/signup', async (req, res) => {
     try {
       const { name,email, password } = req.body;
