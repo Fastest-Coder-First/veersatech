@@ -1,6 +1,8 @@
 # Personal Finance Tracker
 
-The Personal Finance Tracker is a web-based application built with JavaScript, HTML, and CSS. It allows users to track their income and expenses, manage categories, and monitor their financial transactions.
+The Personal Finance Tracker is a web-based application built with JavaScript, HTML, and CSS and node.js. It allows users to track their income and expenses, manage categories, and monitor their financial transactions.
+
+More detailed information about the application can be found in the [User Guide](./userguide.md) file.
 
 It has been developed by Four of Veersa Technologies Developers using Github CoPilot tool for enhanced productivity. All code was developed as a part of [Fastest Coder Hackathon](https://www.fastestcoderfirst.com/) project and no code was copied from any other source.
 
@@ -27,7 +29,7 @@ The project is developed using the following technologies and frameworks:
 
 - Frontend: JavaScript, HTML, CSS
 - Backend: Node.js with Express
-- Database: No database is used in this version (data is stored in memory)
+- Database: mongoDB
 
 ## Data Model
 
@@ -76,9 +78,14 @@ Make sure you have [Node.js](https://nodejs.org) and [npm](https://www.npmjs.com
 
 2. Navigate to the project's root directory in your command-line interface (CLI) or terminal.
 
-3. Run the following command to install the project dependencies:
+4. Switch to folder `backend` and run the following command to install the project dependencies:
    ```shell
    npm install
+   ```
+5. Switch to folder `frontend` and run the following command to install the project dependencies:
+   ```shell
+   npm install
+   ```
 
 ### 3. Start the API server:
 
