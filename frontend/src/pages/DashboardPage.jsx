@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import NavbarComponent from "../components/Common/NavbarComponent";
+import NavbarComponent from "../Components/Common/NavbarComponent";
 
 const DashboardPage = () => {
   return (

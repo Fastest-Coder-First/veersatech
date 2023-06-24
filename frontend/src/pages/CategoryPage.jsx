@@ -3,7 +3,7 @@ import { useAuth } from "../contexts/AuthContext";
 import { FinancesTable, SearchFilters } from "../Components/Finances";
 import NavbarComponent from "../Components/Common/NavbarComponent";
 
-const FinancesPage = () => {
+const Category = () => {
   const { currentUser, loggedIn, setLoggedIn } = useAuth();
 
   return (
@@ -13,10 +13,10 @@ const FinancesPage = () => {
       <br />
       <div className="container">
         <SearchFilters />
-        <FinancesTable name="Finances" btnType="Add Transaction"/>
+        <FinancesTable name="Category" btnType="Add Category"/>
       </div>
     </div>
   );
 };
 
-export default FinancesPage;
+export default Category;

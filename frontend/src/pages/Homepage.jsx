@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HeroSection, Features, Footer, LoginModal } from "../components/Home";
+import { HeroSection, Features, Footer, LoginModal } from "../Components/Home";
 import { useAuth } from "../contexts/AuthContext";
 import { Navigate } from "react-router-dom";
 

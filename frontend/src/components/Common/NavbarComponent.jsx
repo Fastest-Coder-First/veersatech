@@ -18,7 +18,7 @@ const NavbarComponent = () => {
   return (
     <Navbar bg="dark" expand="lg" data-bs-theme="dark">
       <Container fluid>
-        <CreateForm recordType="AddTransaction" recordFields={FormBuilder["AddTransaction"]} />
+        {/* <CreateForm recordType="AddTransaction" recordFields={FormBuilder["AddTransaction"]} /> */}
         <Navbar.Brand href="#">Finance Tracker</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -30,7 +30,7 @@ const NavbarComponent = () => {
             <Nav.Link href="/">Dashboard</Nav.Link>
             <Nav.Link href="/finances">Finances</Nav.Link>
             <Nav.Link href="#">Calendar</Nav.Link>
-            <Nav.Link href="#">Categories</Nav.Link>
+            <Nav.Link href="/categories">Categories</Nav.Link>
           </Nav>
 
           {/* username and icon */}
