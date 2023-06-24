@@ -6,42 +6,27 @@ ObjectId = Schema.ObjectId;
 const categorySchema = new Schema({
     name:{
         type:String,
-        required:true,
-        trim:true,
-        min:3,
-        max:20
+        trim:true
     },
     parentId:{
         type:ObjectId,
-        trim:true,
-        min:3,
-        max:20
+        trim:true
     },
     familyId:{
         type:ObjectId,
-        trim:true,
-        min:3,
-        max:20
+        trim:true
     },
     userId:{
         type:ObjectId,
-        required:true,
-        trim:true,
-        min:3,
-        max:20
+        trim:true
     },
     createdBy:{
         type:String,
-        required:true,
-        trim:true,
-        min:3,
-        max:20
+        trim:true
     },
     updatedBy:{
         type:String,
-        trim:true,
-        min:3,
-        max:20
+        trim:true
     },
     createdDate:{
         type:Date,

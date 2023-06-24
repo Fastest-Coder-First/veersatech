@@ -5,73 +5,44 @@ ObjectId = Schema.ObjectId;
 const accountSchema = new Schema({
     name:{
         type:String,
-        required:true,
-        trim:true,
-        min:3,
-        max:20
+        trim:true
     },
     balance:{
         type:Number,
-        required:true,
-        trim:true,
-        min:0,
-        max:1000000
+        trim:true
     },
     currency:{
         type:String,
         required:true,
-        trim:true,
-        min:3,
-        max:20
+        trim:true
     },
     parentId:{
-        type: ObjectId,
-        required:true,
-        trim:true,
-        min:3,
-        max:20
+        type: String,
+        trim:true
     },
     familyId:{
-        type:ObjectId,
-        required:true,
-        trim:true,
-        min:3,
-        max:20
+        type:String,
+        trim:true
     },
     userId:{
         type:ObjectId,
-        required:true,
-        trim:true,
-        min:3,
-        max:20
+        trim:true
     },
     createdBy:{
         type:String,
-        required:true,
-        trim:true,
-        min:3,
-        max:20
+        trim:true
     },
     updatedBy:{
         type:String,
-        required:true,
-        trim:true,
-        min:3,
-        max:20
+        trim:true
     },
     createdDate:{
         type:Date,
-        required:true,
-        trim:true,
-        min:3,
-        max:20
+        trim:true
     },
     updatedDate:{
         type:Date,
-        required:true,
-        trim:true,
-        min:3,
-        max:20
+        trim:true
     },
 })
 module.exports = mongoose.model('Account',accountSchema);
