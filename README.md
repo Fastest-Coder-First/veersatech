@@ -1,2 +1,77 @@
-# veersatech
-Veersatech team submission for JavaScript Hack.
+# Personal Finance Tracker
+
+The Personal Finance Tracker is a web-based application built with JavaScript, HTML, and CSS. It allows users to track their income and expenses, manage categories, and monitor their financial transactions.
+
+It has been developed by Four of Veersa Technologies Developers using Github CoPilot tool for enhanced productivity. All code was developed as a part of [Fastest Coder Hackathon](https://www.fastestcoderfirst.com/) project and no code was copied from any other source.
+
+## GitHub Copilot Usage
+
+During the development of this project, we leveraged the power of GitHub Copilot, an AI-powered code generation tool. Copilot assisted us in various aspects of the development process, providing intelligent code suggestions and automating repetitive coding tasks. Here's how we used Copilot and the benefits it provided:
+
+1. **Code Generation:** Copilot helped us generate boilerplate code, complex algorithms, and common programming patterns. By understanding our code context, it provided accurate and contextually relevant code snippets, saving us time and effort.
+
+2. **Enhanced Productivity:** With Copilot's assistance, we were able to accelerate our development speed and productivity. It significantly reduced the time spent on searching for documentation, researching solutions, and writing repetitive code, allowing us to focus on more critical aspects of the project.
+
+3. **Improved Code Quality:** Copilot's suggestions were aligned with coding conventions and best practices, leading to cleaner, more maintainable code. It helped us catch potential bugs, encouraged consistent code structures, and adhered to industry-standard practices, resulting in improved code quality.
+
+4. **Learning Resource:** Copilot served as a valuable learning tool throughout the project. By observing the code suggestions provided by Copilot, we gained insights into programming patterns, idiomatic expressions, and industry-standard practices. This allowed us to enhance our coding skills and deepen our understanding of the programming language.
+
+It's important to note that while Copilot provided significant assistance, we reviewed and validated all generated code to ensure it aligned with our project requirements and followed our coding standards. Copilot should be used as a supportive tool, complementing our expertise and judgment as developers.
+
+Overall, GitHub Copilot proved to be a valuable asset, helping us streamline our development process, improve productivity, and produce high-quality code efficiently.
+
+
+## Technical Details
+
+The project is developed using the following technologies and frameworks:
+
+- Frontend: JavaScript, HTML, CSS
+- Backend: Node.js with Express
+- Database: No database is used in this version (data is stored in memory)
+
+## Data Model
+
+The application consists of the following entities:
+
+1. Transaction:
+   - ID: String or Number
+   - Description: String
+   - Amount: Number
+   - Type: String (income or expense)
+
+2. User:
+   - ID: String or Number
+   - Username: String
+   - Email: String
+   - Password: String
+
+3. Categories:
+   - ID: String or Number
+   - Name: String
+   - ParentID: String or Number (optional)
+
+4. Accounts:
+   - ID: String or Number
+   - Name: String
+   - Balance: Number
+   - Currency: String
+
+## Installation and Usage
+
+1. Clone the repository:
+
+2. Install dependencies:
+
+3. Start the server:
+
+4. Access the application in your browser at [http://localhost:3000](http://localhost:3000).
+
+For detailed instructions on how to use the application and its features, please refer to the [User Guide](./userguide.md) file.
+
+## User Guide
+
+For detailed information on how to use the Personal Finance Tracker and its various features, please refer to the [User Guide](./userguide.md) file.
+
+
+
+
