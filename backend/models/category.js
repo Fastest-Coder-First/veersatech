@@ -13,14 +13,12 @@ const categorySchema = new Schema({
     },
     parentId:{
         type:ObjectId,
-        required:true,
         trim:true,
         min:3,
         max:20
     },
     familyId:{
         type:ObjectId,
-        required:true,
         trim:true,
         min:3,
         max:20
@@ -41,19 +39,16 @@ const categorySchema = new Schema({
     },
     updatedBy:{
         type:String,
-        required:true,
         trim:true,
         min:3,
         max:20
     },
     createdDate:{
         type:Date,
-        required:true,
         trim:true
     },
     updatedDate:{
         type:Date,
-        required:true,
         trim:true
     },
 })

@@ -46,11 +46,7 @@ const transactionSchema = new Schema({
         min:3,
         max:20
     },
-    credit:{
-        type:Boolean,
-        required:true,
-    },
-    debit:{ 
+    transactionType:{
         type:Boolean,
         required:true,
     },

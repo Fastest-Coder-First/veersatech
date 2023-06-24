@@ -1,6 +1,6 @@
 import React from "react";
 import { useAuth } from "../contexts/AuthContext";
-import { FinancesTable, SearchFilters } from "../Components/Finances";
+import { TableComponent, SearchFilters } from "../Components/Finances";
 import NavbarComponent from "../Components/Common/NavbarComponent";
 
 const FinancesPage = () => {
@@ -13,7 +13,7 @@ const FinancesPage = () => {
       <br />
       <div className="container">
         <SearchFilters />
-        <FinancesTable name="Finances" btnType="Add Transaction"/>
+        <TableComponent name="Finances" btnType="Add Transaction"/>
       </div>
     </div>
   );
