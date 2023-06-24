@@ -5,18 +5,17 @@ const router = express.Router();
 const Category = require('../models/category');
 const auth = require('../middleware/auth');
 
-router.post('/add', (req, res) => {
-    const { name, userId, createdBy, updatedBy, createdDate, updatedDate, parentId, familyId } = req.body;
+router.post('/add', auth, (req, res) => {
+    const { name, userId, parentId, familyId } = req.body;
+    const decoded = jwt.verify(token,process.env.JWT_SECRET);
     const category = new Category({
-        name,
-        description,
-        userId,
-        createdBy,
-        updatedBy,
-        createdDate,
-        updatedDate,
-        parentId,
-        familyId
+        name: name,
+        description: description,
+        userId: userId,
+        createdBy: req.user.email,
+        createdDate: new Date(),
+        parentId: parentId,
+        familyId: familyId
     })
     category.save().then((category) => {
         res.status(200).json({ success: true, category })
@@ -42,17 +41,16 @@ router.delete('/delete/:id', (req, res) => {
 })
 
 router.put('/update/:id',auth,(req,res)=>{
-    const {name, userId, createdBy, updatedBy, createdDate, updatedDate, parentId, familyId} = req.body;
+    const {name, userId, createdBy, updatedBy, parentId, familyId} = req.body;
+    const date = new Date();
     Category.findByIdAndUpdate(req.params.id,{
-        name,
-        parentId,
-        userId,
-        familyId,
-        categoryId,
-        createdBy,
-        updatedBy,
-        createdDate,
-        updatedDate
+        name: name,
+        parentId: parentId,
+        userId: userId,
+        familyId: familyId,
+        categoryId: categoryId,
+        updatedBy: req.user.email,
+        updatedDate: date
     }).then((transaction)=>{
         res.status(200).json({success:true,transaction})
     }).catch((err)=>{
