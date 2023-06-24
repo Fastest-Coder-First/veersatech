@@ -3,3 +3,4 @@ backend/node_modules
 build/
 .vscode/
 .vs/
+./backend/.env
