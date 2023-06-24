@@ -10,14 +10,7 @@ More detailed information like [Screenshots](./screenshots.md), about the applic
 
 # Development Details
 
-The projecthas been developed as a part of [Fastest Coder Hackathon](https://www.fastestcoderfirst.com/) project with extensive [usage of Github CoPilot](#github-copilot-usage). The project is developed from scratch by the team members and no code was copied from any other source. 
-
-| Name | Github Handle | Role | Image |
-| --- | --- | --- | --- |
-| Vipul Taneja | @vipulTaneja | Team Lead | ![Vipul](./media/Vipul.png) |
-| Gourav  | @dayalubana | Full Stack Developer | ![Gourav](./media/Gourav.png) |
-| Daya Singh | @champgourav007 | Full Stack Developer | ![Daya](./media/Daya.png) |
-| Chaitanya | @Chaitanya31612 | Full Stack Developer | ![Chaitanya](./media/Chaitanya.png) |
+The project has been developed as a part of [Fastest Coder Hackathon](https://www.fastestcoderfirst.com/) project with extensive [usage of Github CoPilot](#github-copilot-usage). 
 
 ## GitHub Copilot Usage
 
@@ -50,7 +43,15 @@ The project is developed using the following MERN technologies and frameworks:
 
 The application follows a client-server architecture. The frontend is built using JavaScript, HTML, and CSS. The backend is built using Node.js with Express. The database is built using mongoDB.
 
+## Development Team
+The project is developed from scratch by the team members and no code was copied from any other source. 
 
+| Name | Github Handle | Role | Image |
+| --- | --- | --- | --- |
+| Vipul Taneja | @vipulTaneja | Team Lead | ![Vipul](./media/Vipul.png) |
+| Gourav  | @dayalubana | Full Stack Developer | ![Gourav](./media/Gourav.png) |
+| Daya Singh | @champgourav007 | Full Stack Developer | ![Daya](./media/Daya.png) |
+| Chaitanya | @Chaitanya31612 | Full Stack Developer | ![Chaitanya](./media/Chaitanya.png) |
 
 ## Data Model
 

@@ -28,8 +28,10 @@ Categoroes Page that allows users to view, add, edit, and delete categories.
 
 # Accounts Page
 Accounts Page that allows users to view, add, edit, and delete accounts.
+![Accounts Page](./media/accounts.jpg)
 
 # Reports Page
 Reports Page that allows users to view reports of their income and expenses over time.
-![Dashboard Page](./media/dashboard.jpg)
+![Reports Page](./media/reports.jpg)
+
 
