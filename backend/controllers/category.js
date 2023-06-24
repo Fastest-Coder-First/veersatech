@@ -26,8 +26,11 @@ router.post("/add", auth, (req, res) => {
     })
 })
 
-router.get('/get/:id', (req, res) => {
-    Category.findById(req.params.id).then((category) => {
+router.get('/get', (req, res) => {
+    var token = req.header("Authorization");
+    const decoded = jwt.verify(token, process.env.TOKEN_KEY);
+    let userId = decoded.userId;
+    Category.findById(userId).then((category) => {
         res.status(200).json({ success: true, category })
     }).catch((err) => {
         res.status(400).json({ success: false, err })
@@ -61,7 +64,6 @@ router.put('/update/:id',auth,(req,res)=>{
         res.status(400).json({success:false,err})
     })
 })
-
 router.get('/getall',auth,(req,res)=>{
     Category.find().then((category)=>{
         res.status(200).json({success:true,category})
