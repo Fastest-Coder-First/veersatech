@@ -1,0 +1,38 @@
+.finances {
+  &-searchfilter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    input {
+      width: 75%;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      border: 1px solid #ced4da;
+      border-radius: 0.25rem;
+      font-size: 1rem;
+      color: #666;
+      background-color: #f9f9f9;
+      transition: border-color 0.2s ease-in-out;
+      // box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.1);
+      &:focus {
+        outline: none;
+        border-color: #007bff;
+      }
+
+    }
+
+    .filter-btn {
+      width: 20%;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      border:none;
+      border-radius: 0.35rem;
+      font-size: 1rem;
+      color: #fff;
+      background-color: #007bff ;
+      transition: border-color 0.2s ease-in-out;
+      
+    }
+  }
+}
