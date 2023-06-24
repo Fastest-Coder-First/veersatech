@@ -20,7 +20,7 @@ app.use(bodyParser.json())
 app.use(express.static('public')); 
 app.use('/images', express.static('images'));
 var corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: '*',
     optionsSuccessStatus: 200 
 }
 
