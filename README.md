@@ -2,15 +2,22 @@
 
 The Personal Finance Tracker is a web-based application built with JavaScript, HTML, and CSS and node.js. It allows users to track their income and expenses, manage categories, and monitor their financial transactions.
 
-More detailed information about the application extensive [Features](./userguide.md#features) and intutive usage can be found in the [User Guide](./userguide.md) file.
+The application is designed to be simple, intuitive, and user-friendly. It provides a clean, modern, and responsive user interface that is easy to navigate and understand. It also offers a range of features to help users manage their finances effectively.
+
+#Screenshots
+
+More detailed information about the application extensive [Features](./userguide.md#features), [Screenshots](./screenshots.md) and intutive usage can be found in the [User Guide](./userguide.md) file.
 
 #Development Details
 
-It has been developed by following Four of Veersa Technologies Developers using Github CoPilot tool for enhanced productivity. All code was developed as a part of [Fastest Coder Hackathon](https://www.fastestcoderfirst.com/) project and no code was copied from any other source.
-1. @vipulTaneja - Team Lead
-2. @dayalubana - Full Stack Developer
-3. @champgourav007 - Full Stack Developer
-4. @Chaitanya31612 - Full Stack Developer
+The projecthas been developed as a part of [Fastest Coder Hackathon](https://www.fastestcoderfirst.com/) project with extensive [usage of Github CoPilot](#github-copilot-usage). The project is developed from scratch by the team members and no code was copied from any other source. 
+
+| Name | Github Handle | Role | Image |
+| --- | --- | --- | --- |
+| Vipul Taneja | @vipulTaneja | Team Lead | ![Vipul](./media/Vipul.png) |
+| Gourav  | @dayalubana | Full Stack Developer | ![Gourav](./media/Gourav.png) |
+| Daya Singh | @champgourav007 | Full Stack Developer | ![Daya](./media/Daya.png) |
+| Chaitanya | @Chaitanya31612 | Full Stack Developer | ![Chaitanya](./media/Chaitanya.png) |
 
 ## GitHub Copilot Usage
 
@@ -23,6 +30,8 @@ During the development of this project, we leveraged the power of GitHub Copilot
 3. **Improved Code Quality:** Copilot's suggestions were aligned with coding conventions and best practices, leading to cleaner, more maintainable code. It helped us catch potential bugs, encouraged consistent code structures, and adhered to industry-standard practices, resulting in improved code quality.
 
 4. **Learning Resource:** Copilot served as a valuable learning tool throughout the project. By observing the code suggestions provided by Copilot, we gained insights into programming patterns, idiomatic expressions, and industry-standard practices. This allowed us to enhance our coding skills and deepen our understanding of the programming language.
+
+5. **Documentation Assistance:** Copilot helped us generate documentation for our code. It provided accurate and contextually relevant comments, allowing us to quickly and efficiently document our code. Even in writing this readme file a lot of assitance was provided by Copilot!
 
 It's important to note that while Copilot provided significant assistance, we reviewed and validated all generated code to ensure it aligned with our project requirements and followed our coding standards. Copilot should be used as a supportive tool, complementing our expertise and judgment as developers.
 

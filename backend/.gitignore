@@ -1,5 +1,2 @@
 .env
-<<<<<<< Updated upstream
-package-lock.json
-=======
->>>>>>> Stashed changes
+/package-lock.json

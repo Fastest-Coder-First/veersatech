@@ -12,7 +12,7 @@ router.post('/add', auth, (req, res) => {
         name : name,
         userId: userId,
         familyId: familyId,
-        createdBy: decoded.email,
+        createdBy: req.user.email ,
         createdDate: date,
         parentId: parentId,
         balance: balance,

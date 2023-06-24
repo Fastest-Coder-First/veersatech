@@ -56,17 +56,5 @@ export const FormBuilder = {
       placeholder: "Enter Description",
       required: true,
     },
-    {
-      type: "radio",
-      name: "isParent",
-      label: "Is Parent",
-      required: true,
-    },
-    {
-      type: "select",
-      name: "categoryId",
-      label: "Category",
-      required: true,
-    },
   ],
 };
