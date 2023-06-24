@@ -13,6 +13,7 @@ Following are the key features of the Personal Finance Tracker application:
 - Responsive design for mobile and desktop devices
 - Multi-Tenant support - you can create multiple families and family memmbers can manage their own customized transactions, categories, and accounts etc.
 
+![Landing Page](./media/landing-page.png)
 
 ## Sections
 
@@ -28,6 +29,7 @@ Personal Finance Tracker is divided into the following sections:
 ## Dashboard
 
 The dashboard provides an overview of your financial information. It displays your current balance, income, expenses, and may include charts or graphs representing your spending patterns. Use the dashboard to get a quick snapshot of your financial situation.
+![Dashboard Page](./media/dashboard.jpg)
 
 ## Transactions
 
@@ -37,6 +39,9 @@ The transactions feature allows you to add, edit, and delete income and expense 
 2. **Add Transaction:** Click on the "Add Transaction" button to create a new income or expense entry. Enter the necessary details, such as description, amount, and category.
 3. **Edit Transaction:** To modify an existing transaction, click on the edit icon or the transaction itself. Update the necessary fields and save the changes.
 4. **Delete Transaction:** If you want to remove a transaction, locate the delete icon next to the transaction and confirm the deletion.
+![Transactions Page](./media/transactions.jpg)
+
+
 
 ## Categories
 
@@ -46,6 +51,7 @@ The categories feature allows you to manage and organize your transaction catego
 2. **Add Category:** Click on the "Add Category" button to create a new category. Provide a name for the category and, if needed, select a parent category to create a hierarchy.
 3. **Edit Category:** To modify a category, locate the edit icon or the category itself. Update the name or parent category as required and save the changes.
 4. **Delete Category:** If you want to remove a category, find the delete icon next to the category and confirm the deletion. Note that deleting a category may affect associated transactions.
+![Categories Page](./media/categories.jpg)
 
 ## Accounts
 
@@ -55,6 +61,7 @@ The accounts feature enables you to manage your financial accounts, such as bank
 2. **Add Account:** Click on the "Add Account" button to create a new account. Enter a name for the account, specify the initial balance, and select the currency.
 3. **Edit Account:** To modify an existing account, locate the edit icon or the account itself. Update the name, balance, or currency as necessary and save the changes.
 4. **Delete Account:** If you want to remove an account, find the delete icon next to the account and confirm the deletion. Note that deleting an account may affect associated transactions.
+![Accounts Page](./media/accounts.jpg)
 
 ## Reports
 
@@ -64,6 +71,7 @@ The reports feature allows you to generate various reports related to your finan
 2. **Set Filters (Optional):** If needed, set filters to refine the report results. For example, you can specify a date range or select specific categories.
 3. **Generate Report:** Click on the "Generate Report" button to generate the report based on your selections.
 4. **View and Export:** Once the report is generated, you can view it on the screen and, if desired, export it to a file format like PDF or CSV.
+![Reports Page](./media/reports.jpg)
 
 ## Settings
 
@@ -84,7 +92,7 @@ Congratulations! You are now familiar with the various features of the Personal 
 - Multi-currency support
 
 
-If you have any further questions or need assistance, please reach out to our development team.
+If you have any further questions or need assistance, please reach out to our [development team](./README.md#development-team).
 
 
 Enjoy using the Personal Finance Tracker!
